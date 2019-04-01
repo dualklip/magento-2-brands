@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="PhoenixConnection_Brands::brands" title="Brands" module="PhoenixConnection_Brands" sortOrder="10" resource="PhoenixConnection_Brands::brands"/>
+        <add id="PhoenixConnection_Brands::list" title="List" module="PhoenixConnection_Brands" sortOrder="10" parent="PhoenixConnection_Brands::brands" action="brands/index" resource="PhoenixConnection_Brands::phoenixconnection_list"/>
+        <add id="PhoenixConnection_Brands::config" title="Configuration" module="PhoenixConnection_Brands" sortOrder="11" parent="PhoenixConnection_Brands::brands" action="adminhtml/system_config/edit/section/brands" resource="PhoenixConnection_Brands::phoenixconnection_configuration"/>
+    </menu>
+</config>
