@@ -5,7 +5,7 @@
     "php": "*",
     "magento/framework": "*",
     "magento/module-config": "*",
-    "magento/module-catalog": "*",
+    "magento/module-catalog": "*"
   },
   "minimum-stability": "stable",
   "type": "magento2-module",
