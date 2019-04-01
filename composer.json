@@ -2,7 +2,7 @@
   "name": "phoenixconnection/brands",
   "description": "Listado de marcas",
   "require": {
-    "php": "^7.1.0"
+    "php": "~7.1|~7.2|~7.3"
   },
   "minimum-stability": "dev",
   "type": "magento2-module",
