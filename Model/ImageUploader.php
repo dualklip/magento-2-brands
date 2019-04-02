@@ -48,21 +48,14 @@ class ImageUploader
      *
      * @var string
      */
-    protected $baseTmpPath = 'catalog/tmp/product';
+    protected $baseTmpPath = 'brands/tmp/';
 
     /**
      * Base path
      *
      * @var string
      */
-    protected $basePath = 'catalog/product';
-
-    /**
-     * Allowed extensions
-     *
-     * @var string
-     */
-    protected $allowedExtensions;
+    protected $basePath = 'brands';
 
     /**
      * List of allowed image mime types
@@ -74,6 +67,18 @@ class ImageUploader
         'image/jpeg',
         'image/gif',
         'image/png',
+    ];
+
+    /**
+     * Allowed extensions
+     *
+     * @var string[]
+     */
+    protected $allowedExtensions = [
+        'jpg',
+        'jpeg',
+        'gif',
+        'png',
     ];
 
     /**
@@ -93,19 +98,13 @@ class ImageUploader
         \Magento\Framework\Filesystem $filesystem,
         \Magento\MediaStorage\Model\File\UploaderFactory $uploaderFactory,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \Psr\Log\LoggerInterface $logger,
-        $baseTmpPath,
-        $basePath,
-        $allowedExtensions
+        \Psr\Log\LoggerInterface $logger
     ) {
         $this->coreFileStorageDatabase = $coreFileStorageDatabase;
         $this->mediaDirectory = $filesystem->getDirectoryWrite(\Magento\Framework\App\Filesystem\DirectoryList::MEDIA);
         $this->uploaderFactory = $uploaderFactory;
         $this->storeManager = $storeManager;
         $this->logger = $logger;
-        $this->baseTmpPath = $baseTmpPath;
-        $this->basePath = $basePath;
-        $this->allowedExtensions = $allowedExtensions;
     }
 
     /**
