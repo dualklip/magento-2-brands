@@ -14,6 +14,8 @@ class InstallSchema implements InstallSchemaInterface
         $installer = $setup;
         $installer->startSetup();
 
+
+
         // Get tutorial_simplenews table
         $tableName = $installer->getTable('phoenixconnection_brands');
         // Check if the table already exists

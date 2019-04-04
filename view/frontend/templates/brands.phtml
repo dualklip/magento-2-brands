@@ -1,34 +1,50 @@
-<?php
+<div id="brands-slider" class="owl-carousel owl-theme owl-loaded owl-drag">
+    <div class="owl-stage-outer">
+        <div class="owl-stage"
+             style="transform: translate3d(-396px, 0px, 0px); transition: all 0.25s ease 0s; width: 2376px;">
+            <?php foreach ($block->getBrandCollection() as $key=>$post){ ?>
+            <div class="owl-item" style="width: 178px; margin-right: 20px;">
+                <div class="item">
+                    <img src="pub/media/brands/tmp/<?php echo $post->getLogo(); ?>" alt="<?php echo $post->getTitle(); ?>" />
+                </div>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
+</div>
 
-/**
- * @var \PhoenixConnection\Brands\Block\Display $block
- */
-
-echo $block->sayHello();
-
-?>
-
-<style>
-table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
-td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
-tr:nth-child(even) { background-color: #dddddd; }
-.post-id{width:2%} .post-name{width:30%}
-
-</style>
-
-<table>
-  <tr>
-    <th class="post-id">Id</th>
-    <th class="post-name">Title</th>
-    <th>Description</th>
-  </tr>
-    <?php
-        foreach ($block->getBrandCollection() as $key=>$post){
-            echo '<tr>
-                    <td>'.$post->getId().'</td>
-                    <td>'.$post->getTitle().'</td>
-                    <td>'.$post->getDescription().'</td>
-                  </tr>';
-        }
-    ?>
-</table>
+<script type="text/javascript">
+    require(['jquery', 'jquery/ui'], function($){
+        $(document).ready( function() {
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                responsiveClass:true,
+                responsive:{
+                    0:{
+                        items:1,
+                        nav:false,
+                        autoplay:true,
+                        autoplayTimeout: 1500,
+                        dots: false
+                    },
+                    600:{
+                        items:3,
+                        nav:false,
+                        autoplay:true,
+                        autoplayTimeout: 1500,
+                        dots: false
+                    },
+                    1000:{
+                        items:4,
+                        nav:false,
+                        loop:true,
+                        autoplay:true,
+                        autoplayTimeout: 1500,
+                        dots: false
+                    }
+                }
+            });
+        });
+    });
+</script>
